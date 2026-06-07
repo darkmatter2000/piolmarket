@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-emerald: #00C48C;
+  --color-amber: #FF6B35;
+  --color-indigo: #5B21FE;
+  --color-dark-bg: #070E1A;
+  --color-dark-surface: #0D1829;
+  --color-dark-card: #111F35;
+  --color-dark-border: #1E3050;
+}
+
+@layer base {
+  * {
+    @apply border-dark-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark-bg text-white font-outfit antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-syne;
+  }
+}
+
+@layer components {
+  /* === Button System === */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl
+           bg-emerald text-dark-bg font-semibold text-sm
+           hover:bg-emerald-400 active:scale-95
+           transition-all duration-200 ease-out;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl
+           bg-dark-card text-white font-medium text-sm border border-dark-border
+           hover:border-emerald/50 hover:bg-dark-surface
+           transition-all duration-200 ease-out;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg
+           text-gray-400 font-medium text-sm
+           hover:text-white hover:bg-dark-card
+           transition-all duration-150;
+  }
+
+  /* === Card System === */
+  .card {
+    @apply bg-dark-card border border-dark-border rounded-2xl overflow-hidden;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-300
+           hover:border-emerald/30 hover:shadow-lg hover:shadow-emerald/5
+           hover:-translate-y-0.5;
+  }
+
+  /* === Badge System === */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-emerald {
+    @apply badge bg-emerald/15 text-emerald border border-emerald/20;
+  }
+
+  .badge-amber {
+    @apply badge bg-amber/15 text-amber-400 border border-amber/20;
+  }
+
+  .badge-indigo {
+    @apply badge bg-indigo/15 text-indigo-300 border border-indigo/20;
+  }
+
+  .badge-gray {
+    @apply badge bg-dark-muted/50 text-gray-400 border border-dark-border;
+  }
+
+  /* === Input System === */
+  .input {
+    @apply w-full px-4 py-2.5 rounded-xl
+           bg-dark-surface border border-dark-border text-white placeholder-gray-500
+           focus:outline-none focus:border-emerald/60 focus:ring-2 focus:ring-emerald/10
+           transition-all duration-150 text-sm;
+  }
+
+  .select {
+    @apply input appearance-none cursor-pointer;
+  }
+
+  /* === Section layouts === */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* === Glow effects === */
+  .glow-emerald {
+    box-shadow: 0 0 40px rgba(0, 196, 140, 0.15);
+  }
+
+  .glow-amber {
+    box-shadow: 0 0 40px rgba(255, 107, 53, 0.15);
+  }
+
+  /* === Skeleton loading === */
+  .skeleton {
+    @apply rounded-lg bg-gradient-to-r from-dark-surface via-dark-card to-dark-surface;
+    background-size: 200% 100%;
+    animation: shimmer 1.5s linear infinite;
+  }
+}
+
+@layer utilities {
+  .text-gradient-emerald {
+    @apply bg-gradient-to-r from-emerald to-emerald-300 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-warm {
+    @apply bg-gradient-to-r from-amber-400 to-amber bg-clip-text text-transparent;
+  }
+
+  .bg-mesh {
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(0, 196, 140, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(91, 33, 254, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(255, 107, 53, 0.04) 0%, transparent 70%),
+      #070E1A;
+  }
+
+  .border-gradient {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(var(--color-dark-card), var(--color-dark-card)) padding-box,
+      linear-gradient(135deg, rgba(0,196,140,0.3), rgba(91,33,254,0.3)) border-box;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 196, 140, 0.4);
+}
