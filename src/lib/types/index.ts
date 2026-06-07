@@ -15,7 +15,7 @@ export interface Neighborhood {
   slug: string;
   lat: number;
   lng: number;
-  polygon?: GeoJSON.Polygon;
+  // polygon?: GeoJSON.Polygon; // TODO: contour géographique du quartier (anti-fraude + cartes), nécessite @types/geojson
   description?: string;
 }
 
