@@ -19,7 +19,7 @@ src/
 │   ├── page.tsx              ← Landing page (consumer-facing, vivid colors)
 │   ├── listings/             ← Annonces immobilières
 │   ├── dashboard/            ← Market intelligence (B2B, plus sobre)
-│   ├── simulator/            ← ROI simulator (diaspora investors)
+│   ├── simulator/            ← Simulateur ROI immobilier (outil universel investisseurs)
 │   ├── (auth)/               ← Login / Register
 │   └── api/                  ← Route handlers
 ├── components/
@@ -69,7 +69,7 @@ Voir `.env.example` — les deux clés Supabase suffisent pour démarrer.
 **Phase 2** :
 - [ ] Vérification photo (GPS + anti-fraude AI)
 - [ ] Système de points
-- [ ] Simulateur ROI diaspora
+- [ ] Simulateur ROI — outil de projection rentabilité immobilière
 
 **Phase 3** :
 - [ ] Module prédictions gamifié (style Polymarket, points virtuels)
@@ -81,6 +81,9 @@ Voir `.env.example` — les deux clés Supabase suffisent pour démarrer.
 3. **Simulateur ROI** : toujours avec disclaimers visibles, projections illustratives uniquement
 4. **Scraping** : transitoire, remplacé progressivement par soumissions directes utilisateurs/agences
 5. **Prix** : toujours "prix demandé" (asked price), jamais "prix de transaction"
+6. **Positionnement simulateur ROI** : outil universel (tout investisseur, local ou expatrié),
+   pas un produit "diaspora-only" — la diaspora reste un segment cible important en interne
+   (acquisition, marketing ciblé), mais ne doit pas être mise en avant comme exclusivité produit
 
 ### 🛠️ Commandes utiles
 ```bash

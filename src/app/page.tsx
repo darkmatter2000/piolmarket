@@ -39,9 +39,9 @@ const FEATURES = [
   {
     icon: TrendingUp,
     color: "indigo",
-    title: "Simulateur ROI diaspora",
-    desc: "Projetez vos rendements locatifs comparés aux alternatives d'investissement. Outil exclusif pour la diaspora.",
-    badge: "Diaspora Invest",
+    title: "Simulateur ROI immobilier",
+    desc: "Projetez vos rendements locatifs comparés aux alternatives d'investissement. Pour tout investisseur, qu'il soit basé au Cameroun ou à l'étranger.",
+    badge: "Investissement",
   },
   {
     icon: Globe,
