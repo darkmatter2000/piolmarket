@@ -2,13 +2,15 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Mail, Lock, ArrowRight, Loader2 } from "lucide-react";
 import toast from "react-hot-toast";
 import { createClient } from "@/lib/supabase/client";
 
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const next = searchParams.get("next") || "/";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -27,7 +29,7 @@ export default function LoginPage() {
     }
 
     toast.success("Connexion réussie");
-    router.push("/");
+    router.push(next);
     router.refresh();
   }
 
