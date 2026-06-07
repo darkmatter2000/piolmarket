@@ -86,13 +86,13 @@ export default function KpiCards() {
       {KPI_CARDS.map((card) => (
         <article
           key={card.id}
-          className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/20"
+          className="rounded-2xl border border-white/10 bg-[#0D1829] p-6"
         >
           <div className="mb-4">
             <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
               {card.label}
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-950">
+            <h2 className="mt-3 text-3xl font-semibold text-white">
               {card.value}
             </h2>
           </div>
@@ -102,19 +102,19 @@ export default function KpiCards() {
               className={cn(
                 "rounded-full px-2.5 py-1 text-xs font-semibold",
                 card.deltaPositive
-                  ? "bg-emerald-100 text-emerald-700"
-                  : "bg-red-100 text-red-600"
+                  ? "bg-emerald-500/10 text-emerald-400"
+                  : "bg-red-500/10 text-red-400"
               )}
             >
               {card.deltaLabel}
             </span>
           </div>
 
-          <div className="mb-5 rounded-3xl bg-slate-50 p-3">
+          <div className="mb-5 rounded-2xl bg-white/[0.03] p-3">
             <Sparkline points={card.sparkline} color={card.deltaPositive ? "#00C48C" : "#EF4444"} />
           </div>
 
-          <p className="text-sm text-slate-600">{card.info}</p>
+          <p className="text-sm text-slate-400">{card.info}</p>
         </article>
       ))}
     </section>

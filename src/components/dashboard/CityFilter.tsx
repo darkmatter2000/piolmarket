@@ -24,7 +24,7 @@ export default function CityFilter() {
   const [activeNeighborhood, setActiveNeighborhood] = useState<Neighborhood["id"]>("all");
 
   return (
-    <section className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/20">
+    <section className="rounded-2xl border border-white/10 bg-[#0D1829] p-6">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -40,8 +40,8 @@ export default function CityFilter() {
                   className={cn(
                     "rounded-full px-4 py-2 text-sm font-semibold transition",
                     activeCity === city
-                      ? "bg-emerald text-white shadow-sm shadow-emerald/20"
-                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                      ? "bg-emerald-500 text-[#070E1A] shadow-sm shadow-emerald-500/20"
+                      : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
                   )}
                 >
                   {city}
@@ -50,9 +50,9 @@ export default function CityFilter() {
             </div>
           </div>
 
-          <div className="inline-flex items-center gap-3 rounded-full bg-slate-100 px-4 py-3 text-sm text-slate-500">
-            <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse-slow" />
-            <span className="font-semibold text-slate-700">LIVE</span>
+          <div className="inline-flex items-center gap-3 rounded-full bg-white/5 px-4 py-3 text-sm text-slate-400">
+            <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse-slow" />
+            <span className="font-semibold text-slate-200">LIVE</span>
             <span>maj. il y a 47 s · 1 919 annonces actives</span>
           </div>
         </div>
@@ -67,8 +67,8 @@ export default function CityFilter() {
                 className={cn(
                   "rounded-full border px-3 py-2 text-sm font-medium transition",
                   activeNeighborhood === neighborhood.id
-                    ? "bg-slate-900 text-white border-slate-900"
-                    : "bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200"
+                    ? "bg-emerald-500 text-[#070E1A] border-emerald-500"
+                    : "bg-white/5 text-slate-400 border-white/10 hover:bg-white/10 hover:text-white"
                 )}
               >
                 {neighborhood.label}
